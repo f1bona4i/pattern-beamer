@@ -1,0 +1,140 @@
+\documentclass[aspectratio=169, t]{beamer}  % [t], [c], или [b] --- вертикальное выравнивание на слайдах (верх, центр, низ)
+%\documentclass[handout]{beamer} % Раздаточный материал (на слайдах всё сразу)
+
+% Настройки + тема оформления находятся в файле preamble.tex
+\include{preamble.tex}
+
+% Информация для титульного слайда находится в файле title.tex
+\include{title.tex}
+
+\begin{document}
+
+% Титульный слайд
+\frame[plain]{\titlepage}
+
+% Содержание презентации
+\begin{frame}
+    \frametitle{Содержание}
+    \begin{multicols}{2}
+    \tableofcontents
+    \end{multicols}
+    % Или вместо автоматического содержания можно создать список вручную:
+    %\begin{itemize}
+    %    \item Первый раздел
+    %    \item Второй раздел
+    %    \item Третий раздел
+    %\end{itemize}
+\end{frame}
+
+% Раздел 1
+\section*{Введение} % Не будет учитываться в tableofcontent
+\subsection{Подраздел введения}
+
+\begin{frame}
+    \frametitle{\insertsection}
+    \framesubtitle{\insertsubsection}
+    
+    % Пример простого слайда с маркированным списком
+    \begin{itemize}
+        \item Первый пункт
+        \item Второй пункт
+        \item Третий пункт с \textbf{выделением}
+    \end{itemize}
+    
+\end{frame}
+
+% Раздел 2
+\section{Слайд с колонками}
+\subsection{Текст и изображение}
+
+\begin{frame}
+    \frametitle{\insertsection}
+    \framesubtitle{\insertsubsection}
+    
+    \begin{columns}
+        \column{0.6\textwidth}
+        % Левая колонка с текстом
+        \begin{itemize}
+            \item Первый пункт
+            \item Второй пункт
+            \item Третий пункт
+        \end{itemize}
+        
+        \column{0.4\textwidth}
+        % Правая колонка с изображением
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.9\textwidth]{images/logo.png}
+            \caption{Подпись к изображению}
+        \end{figure}
+    \end{columns}
+    
+\end{frame}
+
+% Раздел 3
+\section{Математические формулы}
+
+\begin{frame}
+    \frametitle{\insertsection}
+    
+    % Пример встроенной формулы
+    Формула в тексте: $E = mc^2$
+    
+    % Пример выделенной формулы
+    \begin{equation}
+        F = G \frac{m_1 m_2}{r^2}
+    \end{equation}
+    
+    % Пример системы уравнений
+    \begin{align}
+        x^2 + y^2 &= 1 \\
+        x + y &= 1
+    \end{align}
+    
+\end{frame}
+
+% Раздел 4
+\section{Таблицы и блоки}
+
+\begin{frame}
+    \frametitle{\insertsection}
+    
+    % Пример таблицы
+    \begin{table}
+        \centering
+        \begin{tabular}{|l|c|r|}
+            \hline
+            \textbf{Левый} & \textbf{Центр} & \textbf{Правый} \\
+            \hline
+            A1 & B1 & C1 \\
+            A2 & B2 & C2 \\
+            \hline
+        \end{tabular}
+        \caption{Пример таблицы}
+    \end{table}
+    
+    % Пример блока (box)
+    \begin{block}{Важный блок}
+        Содержимое блока с важной информацией.
+    \end{block}
+    
+    \begin{alertblock}{Внимание!}
+        Блок для привлечения особого внимания.
+    \end{alertblock}
+    
+\end{frame}
+
+% Заключительный слайд
+\section*{Заключение} % Не будет учитываться в tableofcontent
+
+\begin{frame}
+    \frametitle{Спасибо за внимание!}
+    \begin{center}
+        \huge{Вопросы?}
+        
+        \vspace{1cm}
+        \normalsize{\texttt{email@example.com}}
+    \end{center}
+\end{frame}
+
+\end{document}
